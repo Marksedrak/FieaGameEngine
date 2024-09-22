@@ -1,0 +1,29 @@
+{
+	"{GameObject}Player" : {
+		"Name" : "Jeff",
+		"IncrementTest" : 0.0,
+		"IncrementArrayTest" : [ 1, 3, 4, 6 ],
+		"IncrementArrayTestFloat" : [ 2.3, 5.5, 2.2, 4.1 ],
+		"IncrementTestFloat" : 2.4,
+		"Children" : [
+			{
+				"{GameObject}Sword" : {
+					"Damage" : 12
+				}
+			}
+		],
+		"Actions" : [
+			{
+				"{ActionIncrement}Increment" : {
+					"DatumKey" : "IncrementTest",
+					"Value" : 1.0
+				}
+			},
+			{
+				"{ActionIncrement}IncompleteIncrement" : {
+					"Value" : 2.3
+				}
+			}
+		]
+	}
+}

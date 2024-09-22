@@ -1,0 +1,20 @@
+{
+	"{AttributedFoo}Foo1" : {
+		"externalInteger" : 2048,
+		"externalFloat" : 5.4,
+		"externalString" : "Hello",
+		"HelperInt" : 24,
+		"TestFloat" : 3.5,
+		"NewString" : "Factory F'in Works",
+		"NewVec" : "Vec4(2.4, 3.5, 4.5, 2.2)",
+		"NewMatrix" : "mat4((2.5, 1.8, 4.4, 3.2), (2.5, 1.8, 4.4, 3.2), (2.5, 1.8, 4.4, 3.2), (2.5, 1.8, 4.4, 3.2))",
+		"ObjArray" : [
+			{
+				"NestedArrayInt": [1, 2, 3, 4]
+			},
+			{
+				"NestedArrayFloat": [2.3, 4.5, 2.4, 1.5]
+			}
+		]
+	}
+}

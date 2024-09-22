@@ -1,0 +1,19 @@
+{
+	"{Hero}MainCharacter" : {
+		"Name" : "Barry Allen",
+		"HeroName" : "The Flash",
+		"PassiveName" : "Super Speed",
+		"Class" : "Speedster", 
+		"Children" : [
+			{
+				"{GameObject}Sword" : {
+					"Name" : "Excalibur",
+					"Damage" : 25,
+					"Range" : 5,
+					"Durability" : 99.9,
+					"Subclass" : "Longsword"
+				}
+			}
+		]
+	}
+}

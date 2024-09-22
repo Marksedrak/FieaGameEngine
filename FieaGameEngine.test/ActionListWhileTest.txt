@@ -1,0 +1,36 @@
+{
+	"{GameObject}Player" : {
+		"Name" : "Ryan",
+		"IncrementTest" : 0,
+		"ConditionTest" : 0,
+		"Actions" : [
+			{
+				"{ActionListWhile}ALW" : {
+					"Condition" : "ConditionTest",
+					"Preamble" : [
+						{
+							"{ActionIncrement}Reset" : {
+								"DatumKey" : "ConditionTest",
+								"Value" : 5.0
+							}
+						}
+					],
+					"Actions" : [
+						{
+							"{ActionIncrement}Increment1" : {
+								"DatumKey" : "IncrementTest",
+								"Value" : 2.0
+							}
+						},
+						{
+							"{ActionIncrement}Increment2" : {
+								"DatumKey" : "IncrementTest",
+								"Value" : 3.0
+							}
+						}
+					]
+				}
+			}
+		]
+	}
+}

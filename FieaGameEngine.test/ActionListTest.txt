@@ -1,0 +1,27 @@
+{
+	"{GameObject}Player" : {
+		"Name" : "Jeff",
+		"IncrementTest" : 0.0,
+		"IncrementTestFloat" : 2.4,
+		"Actions" : [
+			{
+				"{ActionList}AList" : {
+					"Actions" : [
+						{
+							"{ActionIncrement}Increment1" : {
+								"DatumKey" : "IncrementTest",
+								"Value" : 2.0
+							}
+						},
+						{
+							"{ActionIncrement}Increment2" : {
+								"DatumKey" : "IncrementTestFloat",
+								"Value" : 0.1
+							}
+						}
+					]
+				}
+			}
+		]
+	}
+}
