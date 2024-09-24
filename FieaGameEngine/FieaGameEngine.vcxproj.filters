@@ -176,9 +176,6 @@
     <ClCompile Include="EventApplyPoison.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EventQueue.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

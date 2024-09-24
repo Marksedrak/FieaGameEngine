@@ -14,9 +14,11 @@ namespace Fiea::GameEngine {
 
 		// Copy Semantics
 		Event(const Event& other);
+
 		Event& operator=(const Event& rhs);
 		// Move Semantics
 		Event(Event&& other);
+
 		Event& operator=(Event&& rhs);
 
 		virtual ~Event() {};
@@ -45,7 +47,9 @@ namespace Fiea::GameEngine {
 
 	private:
 		EventType m_Message; // Payload
-		static std::vector<EventSubscriber*> m_eventSubscribers; // static vector of subscribers so any EventSubscriber could easily subscribe to the evnt
+		std::vector<EventSubscriber*> m_eventSubscribers; // static vector of subscribers so any EventSubscriber could easily subscribe to the evnt
 	};
 
 }
+
+#include "Event.inl"

@@ -46,10 +46,10 @@ namespace Fiea::GameEngine {
 	};
 
 	/** Parameterized Constructor with size
- * @brief Constructs Datum of the type String and allocates memory of Size
- * @param value: const char*
- * @param size: size_t
-*/
+	* @brief Constructs Datum of the type String and allocates memory of Size
+	* @param value: const char*
+	* @param size: size_t
+	*/
 	template<>
 	inline Datum::Datum(const char* value, size_t size) {
 		std::string strValue = std::string(value); // transforms const char* to string strValue
@@ -427,7 +427,10 @@ namespace Fiea::GameEngine {
 		}
 	}
 
-
+	/** SetTypeByType
+	 * @brief Uses the given DatumType, if the Datum hasn't been initialized, to set the Datum type
+	 * @param type : desired Datum type from DatumType enum
+	 */
 	inline void Datum::SetTypeByType(DatumType type) {
 		if (_type != Unknown) {
 			throw std::runtime_error("Cannot change Datum type once already set");

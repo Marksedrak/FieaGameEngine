@@ -547,6 +547,7 @@ namespace Fiea::GameEngine {
 		}
 	}
 
+	// Equal Comparison operator
 	bool Datum::operator==(const Datum& rhs) const{
 		if (_type == rhs._type) {
 			if (_DatumSize == rhs._DatumSize) {
@@ -641,8 +642,6 @@ namespace Fiea::GameEngine {
 	}
 
 
-	// Get Type
-
 	/** GetType
 	* @brief retruns a string with the type that the Datum contains
 	* @return string with Datum's contained type
@@ -695,8 +694,7 @@ namespace Fiea::GameEngine {
 		if (_DatumSize == 0) {
 			return true;
 		}
-		else
-			return false;
+		return false;
 	}
 
 	/**
