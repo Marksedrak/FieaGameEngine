@@ -16,13 +16,17 @@ namespace Fiea::GameEngine{
 		Parent = nullptr;
 	};
 
-	// First Pass on destructor
+	// Destructor
 	Scope::~Scope() {
 		Clear();
 		// Orphan Self
 		Orphan();
 	}
 
+	/**
+	 * @brief Deep copy constructor
+	 * @param other 
+	 */
 	Scope::Scope(const Scope& other) {
 		// Deep copy other Scope
 		Parent = nullptr;
@@ -64,6 +68,12 @@ namespace Fiea::GameEngine{
 
 	};
 
+
+	/**
+	 * @brief Copy assignment operator
+	 * @param rhs 
+	 * @return Copy of rhs
+	 */
 	Scope& Scope::operator=(const Scope& rhs) {
 		// Guard against self assignment
 		if (rhs == *this) {
@@ -110,6 +120,11 @@ namespace Fiea::GameEngine{
 		return *this;
 	}
 
+
+	/**
+	 * @brief Move Constructor
+	 * @param other 
+	 */
 	Scope::Scope(Scope&& other) noexcept : _data(std::move(other._data)), v_data(std::move(other.v_data)), Parent(nullptr) {
 		for (const auto& pair : _data) {
 			if (pair.second._type == Datum::DatumType::Table) {
@@ -121,6 +136,12 @@ namespace Fiea::GameEngine{
 		}
 	}
 
+
+	/**
+	 * @brief Move assignment operator
+	 * @param rhs 
+	 * @return Moved rhs Scope
+	 */
 	Scope& Scope::operator=(Scope&& rhs) noexcept {
 		_data = std::move(rhs._data);
 		v_data = std::move(rhs.v_data);
@@ -146,7 +167,7 @@ namespace Fiea::GameEngine{
 	};
 
 	/** Find
-	 * @brief Searches the current scope's hash map for the key and returns the corresponding key 
+	 * @brief Searches the current scope's hash map for the key and returns the corresponding Datum 
 	 * @param key 
 	 * @return Datum* pointing to the Datum associated with the key, or nullptr if the key is not in the map.
 	*/
@@ -161,6 +182,7 @@ namespace Fiea::GameEngine{
 		return nullptr;
 	}
 
+	// const Find
 	const Datum* Scope::Find(const std::string key) const
 	{
 		// Looks into _data for the key
@@ -471,7 +493,7 @@ namespace Fiea::GameEngine{
 	/** isAncestorOf
 	 * @brief Checks if scope is a descendant of this scope. The inverse of isDescendantOf
 	 * @param scope 
-	 * @return 
+	 * @return true if current Scope is an Ancestor of scope
 	*/
 	bool Scope::isAncestorOf(Scope* scope) {
 		return scope->isDescendantOf(this);

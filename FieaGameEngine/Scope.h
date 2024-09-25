@@ -8,7 +8,7 @@ namespace Fiea::GameEngine {
 		RTTI_DECLARATIONS(Scope, RTTI);
 
 	public:
-		// Default tor
+		// Default ctor
 		Scope() : Parent(nullptr), _data(), v_data() {};
 
 		Scope(std::uint32_t initCapacity);
